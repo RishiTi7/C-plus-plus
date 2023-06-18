@@ -231,3 +231,117 @@ long long 8 bytes
 //     return 0;
 
 // }
+
+// INFINITY AND NAN 
+
+// int main(){
+//      //Infinity and Nan
+//     std::cout << std::endl;
+//     std::cout << "Infinity and NaN" << std::endl;
+    
+//     double number10{ -5.6 };
+//     double number11{};//Initialized to 0
+//     double number12{};  //Initialized to 0
+
+//     //Infinity
+//     double result { number10 / number11 };
+    
+    
+//     std::cout << number10 << "/" << number11 << "  yields " << result << std::endl;
+//     std::cout<< result << "-inf" << "+" << number10 <<"yeilds" << result+number10<<std::endl;
+    
+//     //NaN
+//     result = number11 / number12;
+    
+    
+//     std::cout << number11 << "/" << number12 << " = " << result << std::endl;
+    
+   
+//     return 0;
+// }
+
+// boolean
+
+// int main(){
+//     bool red_light {true};
+//     bool green_light {false};
+
+//     if(red_light == false){
+//         std::cout<< "stop" << std::endl;
+//     }else{
+//         std::cout<< "go" << std::endl;
+//         std::cout<< sizeof(bool) << std::endl;
+//         // std::cout<<boolalpha;
+//     }
+//     return 0;
+// }
+
+// char
+
+// char name {65};
+// char name {'A'}; // another way by integer
+
+// int main(){
+//     std:: cout << "hello "<< name << std::endl;
+//     std:: cout << "value :"<< static_cast<int>(name) << std::endl; // to print value
+//     return 0;
+// }
+
+// compiler auto detects the data type
+// auto name {"rishi"};
+// int main(){
+//     std::cout << name << std::endl;
+// }
+
+// int main(){
+
+// 	auto var1 {12};
+//     auto var2 {13.0};
+//     auto var3 {14.0f};
+//     auto var4 {15.0l};
+//     auto var5 {'e'};
+    
+//     //int modifier suffixes
+//     auto var6 { 123u}; // unsigned
+//     auto var7 { 123ul}; //unsigned long
+//     auto var8 { 123ll}; // long long
+
+//     std::cout << "var1 occupies : " << sizeof(var1) << " bytes" << std::endl;
+//     std::cout << "var2 occupies : " << sizeof(var2) << " bytes" << std::endl;
+//     std::cout << "var3 occupies : " << sizeof(var3) << " bytes" << std::endl;
+//     std::cout << "var4 occupies : " << sizeof(var4) << " bytes" << std::endl;
+//     std::cout << "var5 occupies : " << sizeof(var5) << " bytes" << std::endl;
+//     std::cout << "var6 occupies : " << sizeof(var6) << " bytes" << std::endl;
+//     std::cout << "var7 occupies : " << sizeof(var7) << " bytes" << std::endl;
+//     std::cout << "var8 occupies : " << sizeof(var8) << " bytes" << std::endl;
+   
+//     return 0;
+// }
+
+// Assignments changing the variable
+
+// int main(){
+// int var {21};
+// // std::cout << var;
+// var = 222;
+// std::cout << var;
+
+// }
+// auto var3 {333u};
+// var3 = -21;
+// // we cant do that unsigned to signed
+
+// int main (){
+//     bool red {true};
+
+//     std::cout << red << std::endl;
+
+//     red = false;
+
+//      std::cout << red << std::endl;
+
+
+// }
+
+
+
