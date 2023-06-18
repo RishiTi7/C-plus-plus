@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 // endl is end line and a new statement 
 // c out
@@ -94,7 +95,7 @@
 /*
 short 2 bytes
 int 4 bytes
-long/ double 4 bytes
+long/ double 4 or 8 bytes
 long long 8 bytes
 */
 
@@ -209,6 +210,24 @@ long long 8 bytes
 
 // }
 
-int main(){
+// we have to put suffixes for float and long other wise they chop off in float and chop off to double in long
+// float = f
+//long double = L
+
+// int main(){
+//     //Declare and initialize the variables
+//     float number1 {1.12345678901234567890f}; // Precision : 7
+//     double number2 {1.12345678901234567890}; // Precision : 15
+//     long double number3  {1.12345678901234567890L};
     
-}
+//     //Print out the sizes
+//     std::cout << "sizeof float : " << sizeof(float) << std::endl;
+//     std::cout << "sizeof double : " << sizeof(double) << std::endl;
+//     std::cout << "size of double long: " << sizeof(long double)<< std::endl;
+//     std::cout << std::setprecision(20);
+//     std::cout << "float: " << number1<< std::endl;
+//     std::cout << "double : " << number2<< std::endl;
+//     std::cout << "double long: " << number3<< std::endl;
+//     return 0;
+
+// }
