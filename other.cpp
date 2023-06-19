@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ios>
+#include <cmath>
 
 int main(){
 
@@ -47,6 +48,32 @@ int main(){
 // std:: cout << std:: showpoint;
 // std::cout  << integer <<std:: endl;
 
+
+// fixed gives a min to zero number 
+
+
+    // std:: cout<< "square root is :" << std::sqrt(25) << std::endl;
+    // std:: cout<< "round is :" << std:: round(25.94) << std::endl;
+    // std:: cout << "ceil is :" << std:: ceil(25.9)<<std::endl;
+    // std:: cout << "floor is :" << std:: floor(25.4)<<std::endl;
+
+    // int value { -5000};\
+    // std:: cout << "weight is :" << std:: abs(value)<<std::endl;
+
+    // std:: cout << "exp is " << std::pow(2,2)<<std::endl;
+    // std ::cout << "log is " << std::log2(8);
+
+    // short int value {20};
+    // short int value2 {10};
+
+    // int result = value + value2;
+
+     //compiler is smart enough to convert short or char to int coz arithmetic can only perform in int not below that 4 bytes
+
+    // std::cout<< result ;
+
+
+    // return 0 ;
 
 
 
