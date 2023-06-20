@@ -1203,7 +1203,7 @@ long long 8 bytes
 
 // arrays
 
-int main(){
+// int main(){
     // int scores[10];
 
     // scores[0] = 1;
@@ -1286,11 +1286,127 @@ int main(){
     // char name [] {"rishikar rishi"}; // auto null terminated for string literals
 
     // std::cout << name <<std::endl;
-    // std::cout << sizeof(name) <<std::endl;
-    
+    // std::cout << sizeof(name) <<std::endl; 
 
 
     
     
+// }
+
+//pointers
+// int main(){
+// int * p_number {}; // only stores the address of an int (null pointer) implicit
+
+// double * p_frac_number{}; //only stores the address of an double 
+
+// int * p_numbers {nullptr}; // points to nothing (explicit)
+
+
+// std :: cout << "size of :" << sizeof(p_number)<< std::endl;
+// std :: cout << "size of :" << sizeof(p_frac_number)<< std::endl;
+
+
+// int int_var {21};
+
+// int *ptr_int{&int_var};
+
+// // std :: cout << "size of :" << ptr_int << std::endl;
+
+// int int_var2 = 23;
+
+// ptr_int = & int_var2;
+
+// // std :: cout << "size of :" << ptr_int << std::endl;
+// std :: cout << "size of :" << *ptr_int << std::endl;   // dereferencing a pointer
+
+
+
+// char * ptr_name {};
+// char  p_char_name {'A'};
+
+// ptr_name = & p_char_name;
+
+// std :: cout << "character is :" << *ptr_name << std::endl;
+
+// const char * ptr_name{"rishikar"}; // const char string literals converts to const chars array ** if we dont put cont compiler will put this as a constant chars and that throws an error
+
+// // we cant modify char pointer
+
+// std :: cout << "name is :" << ptr_name << std::endl;
+// std :: cout << "character is :" << *ptr_name << std::endl;
+
+// to allow modifications to the string 
+
+// char message[]{"rishikar"};
+
+// message[0] = 'B';
+// std :: cout << "character is :" << message << std::endl;
+
+
+
+// }
+
+//local scope stack memory
+// int main(){
+
+//     {
+//         int var1 = 45;
+//     }
+
+    
+// }
+
+// heap memory
+
+// int main(){
+
+    // int *ptr_num {nullptr};
+
+    // ptr_num = new int ; // ************ heap dynamic memory
+
+
+    // *ptr_num = 45;
+
+    //or
+
+//     int * ptr_name1 {new int (22)};
+
+//     // std::cout << * ptr_name1<< std::endl;
+
+//     delete ptr_name1;
+
+//     ptr_name1 = nullptr;
+
+// // can reuse the heap 
+//     ptr_name1 = new int(10);
+
+//     std::cout << * ptr_name1<< std::endl;
+
+
+
+
+
+    // resetting the memory to null
+
+    // delete ptr_num;
+    // ptr_num = nullptr;
+
+    // std::cout << *ptr_num <<std::endl;
+
+
+    // dont call delete twice 
+// }
+
+// dangling pointers not pointing to valid memory address
+int main(){
+//multiple pointer pointing to the same address. 
+    // int * ptr_num1(new int(21));
+    // int * ptr_num2(ptr_num1);
+
+    // std::cout << *ptr_num2<<std::endl;
+    // std::cout << *ptr_num1<<std::endl;
+
+    
+
+
 }
-
