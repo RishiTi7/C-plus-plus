@@ -2,6 +2,11 @@
 #include <string>
 #include <iomanip>
 #include <cmath>
+#include <cstring>
+#include <concepts>
+#include <type_traits>
+
+// #include <cstring>
 
 // endl is end line and a new statement 
 // c out
@@ -1398,7 +1403,7 @@ long long 8 bytes
 // }
 
 // dangling pointers not pointing to valid memory address
-int main(){
+// int main(){
 //multiple pointer pointing to the same address. 
     // int * ptr_num1(new int(21));
     // int * ptr_num2(ptr_num1);
@@ -1406,7 +1411,943 @@ int main(){
     // std::cout << *ptr_num2<<std::endl;
     // std::cout << *ptr_num1<<std::endl;
 
+    // exception new fail, memory overload
+
+    // for (size_t i = 0; i < 100000000000000; i++)
+    // {
+    //     try
+    //     {
+    //         int * data = new int[10000000000000];
+    //     }
+    //     catch(const std::exception& e)
+    //     {
+    //         std::cerr << "fuck you " <<  e.what() << '\n';
+    //     }  
+
+
+    // }
+
+    //   for (size_t i = 0; i < 100000000000000; i++)
+    // {
+    //     int * data = new (std::nothrow) int[10000000000000];
+
+    //     if(data!=nullptr){
+    //         std::cout << "data allocated"<<std::endl;
+    //     }else{
+    //         std::cout<< "nice";
+    //     }
+
+    // }
+
+    //memory leak
+
+    // int *p_number { new int{55}};
+
+    // p_number = new int{44};
+
+    // //or
+
+    //    int *p_numbers { new int{100}};
+
+    //    int number {90};
+
+    //    p_number = &number;
+
+    //    // declaring in the local scope
+
+    //    {
+    //     int*ptr_number5 {new int {1212}};
+    //    }
+
+       // after this scope int gets leaked
+
+
+       // dynamic arrays
+
+    //    const size_t size{10};
+
+    //    double *p_salaries { new double [size]};
+
+    //    int * p_students { new(std::nothrow) int [size]{}};
+
+    //    double * p_scores { new( std::nothrow) double [size]{1,2,3,4,5}};
+
+    //    // to release the memory
+
+    //    delete [] p_salaries;
+
+    //    p_salaries = nullptr;
+
+    //    delete [] p_students;
+
+    //    p_students = nullptr;
+    //    delete [] p_scores;
+
+    //    p_scores = nullptr;
+
+    //    return 0;
+
+    // int scores[10]{1,2,3,4,5,6,7}; //static
+
+    // int * p_scores = new int[10]{1,2,3,4,5,6,7}; //dynamic
+
+
+    // references (alias)
+
+    // int data {33};
+
+    // data = 45;
+    // double ddata {10};
+
+    // int& bhavan {data}; // referencing
+
+    // double& rishi {ddata};
+
+    // bhavan = 100;
+
+    // std::cout << bhavan << std::endl;
+    // std::cout << data << std::endl;
+    // std::cout << rishi ;
+
+    // return 0 ;
+
+    // const ref
+
+    // int data = 15;
+
+    // const int& rishi {data};
+
+    // // rishi = 10; // we cant do this
+
+    // std::cout <<rishi ;
+    // return 0;
+
+    // char manipulation c-string facilities
+
+    // std::cout << "C is alphanumeric? : " << std::isalnum('C') << std::endl;
+    // std::cout << "C is alphanumeric? : " << std::isalpha('C') << std::endl;
+
+    // char message []{"hi my name is rishikar sup  !!"};
+
+    // int blank_count {};
+
+    // for (size_t i = 0; i < std::size(message); i++)
+    // {
+    //     if (std::isblank(message[i]))
+    //     {
+    //         std::cout << "found it: [" <<i <<"]" << std::endl;
+    //         ++blank_count;
+    //     }
+        
+    // }
+    // std::cout <<"total " << blank_count ; 
+
+
+    // char rishi []{"hi this cp30 connecting u to 1234"};
+
+    // int number_count{};
+
+    // for(auto numbers : rishi){
+    //     if( std::isdigit(numbers)){
+    //         std::cout << "found it ["<<numbers<<"]" << numbers << std::endl;
+    //         ++number_count;
+
+    //     }
+    // }
+
+    // std::cout << "total is :" << number_count;
+
+    // char rishi[] {"rishikar is a good boy"};
+    // char result_kar[std::size(rishi)];
+    // char result[std::size(rishi)];
+
+    // for (size_t i = 0; i < std::size(rishi); i++)
+    // {
+    //     result_kar[i] = std::toupper(rishi[i]);
+    // }
+    // for (size_t i = 0; i < std::size(rishi); i++)
+    // {
+    //     result[i] = std::tolower(rishi[i]);
+    // }
+    // std::cout<< result_kar<<std::endl;
+    // std::cout<< result;
+
+
+    // size_t n{3};
+
+
+    // const char message [] {"rishikar"};
+    // const char message2 [] {"rishikaR"};
+
+    // std::cout<< std::strnmp(message,message2); // comparing if equal then 0
+    // std::cout<< std::strncmp(message,message2,n); // comparing if equal then 0
+    // std::cout<< std::strlen(message);          // length
     
+
+    // const char *rishi {"rishikar is a good boy and hes rebellious and his name is rishi"};
+
+    // char target = 'r';
+
+    // const char *result = rishi; // an array pointer
+
+    // while ((result = std::strchr(result,target))!=nullptr)
+    // {
+    //     std::cout <<"found" <<target << result;
+    //     result++;
+        
+    // }
+    
+    //c string by pointer
+
+    // const char * rishi {"rishikar"};    // we can change this coz its a pointer 
+
+    // const rishi []{"rishikar"};  //we cant change this 
+
+// int *rishi(nullptr);
+// int *ris(rishi);
+
+// *ris = 200;
+
+// std::cout << *ris;
+// std::cout << *rishi;
+
+// }
+
+// int main(){
+
+
+    // char dest[50] = "hello";
+    // char src[50] = "world";
+
+    // // std::strcat(dest, src);
+    // std::strncat(dest, src,3);  // no of chars to concat
+    // std::strcat(dest, "goodbye");
+    // std::cout <<dest << std::endl;
+
+    //std::strcpy - signature : char* strcpy( char* dest, const char* src );
+    /*
+    std::cout << std::endl;
+	std::cout << "std::strcpy : " << std::endl;
+    const char* source3 = "C++ is a multipurpose programming language.";
+    char *dest3 = new char[std::strlen(source3) + 1];// +1 for the null character
+													//Contains garbage data
+													//Not initialized
+													
+    std::strcpy(dest3,source3);
+    
+    std::cout << "sizeof(dest3) : " << sizeof(dest3) << std::endl;
+    std::cout << "std::strlen(dest3) : " << std::strlen(dest3) << std::endl;
+    std::cout << "dest3 : " << dest3 << std::endl;
+    */
+
+
+    //std::strncpy : Copy n characters from src to dest -
+    //signature : char *strncpy( char *dest, const char *src, std::size_t count );
+	// std::cout << std::endl;
+    // std::cout << "std::strncpy:" << std::endl;
+    // const char* source4 = "Hello";
+    // char dest4[] = {'a', 'b', 'c', 'd', 'e', 'f','\0'}; // Have to put the terminating
+	// 													//null char if we want to print
+    
+    // std::cout << "dest4 : " << dest4 << std::endl;
+    
+	// std::cout << "Copying..." << std::endl;
+    // std::strncpy(dest4,source4,5);
+    
+    // std::cout << "dest4 : " << dest4 << std::endl;
+
+
+    // int *ptr_num {new int (122)};
+
+    // // ptr_num = new int ; // ************ heap dynamic memory
+
+
+    // *ptr_num = 45;
+    // std::cout<< *ptr_num;
+
+
+// }
+
+// int main(){
+//     std::string full_name;
+//     std::string planet_name{"rishikar. hi very nice meeeting you nice"};
+//     std::string weird_msg(5,'e');
+//     std::string message{"earth",2} ;
+//     std::string rishi_hello{ message,0,5} ;
+
+//     std::cout << planet_name<< std::endl;
+//     // std::cout << full_name<< std::endl;
+//     std::cout << weird_msg<< std::endl;
+//     std::cout << message<< std::endl;
+//     std::cout << rishi_hello<< std::endl;
+// }
+
+// void enter_bar(unsigned int age){   // function parameter
+//     if(age > 18){
+//         std::cout<< "enter"<<std::endl;
+//     }else{
+//         std::cout<< "cant"<<std::endl;
+//     }
+//     return ;
+// }
+
+// we have to call in main function first function then main function
+
+
+// int maxx(int a, int b){
+//     if(a>b){
+//         return a;
+//     }else{
+//         return b;
+//     }
+// }
+
+// int lucky_number(){
+//     return 22;
+// }
+
+
+// int main(){
+//     // enter_bar(18);  // function argument
+//     // enter_bar(118);
+
+//     // for (size_t i = 0; i < 20; i++)
+//     // {
+//     //     enter_bar(i);
+//     // }
+
+//     int result = maxx(1002,11);
+//     std::cout<< result;
+//     return 0;
+
+// int result = lucky_number();
+// std::cout << result;
+
+
+
+
+    
+// }
+
+// we can split the function
+
+// int max(int a , int b);   // declaration
+
+// int main(){
+
+//     std::cout << max(1,2)<<std::endl;
+// }
+
+// int max(int a, int b ){    // definition
+//     if (a>b)
+//     {
+//         return a;
+//     }
+//     else
+//     {
+//         return b;
+//     }
+    
+// }
+
+
+// first preprocessor then terminal unit then linker operations header file is .h we can store definitions in header and declaration in operations files linker goes to main m=function finds the definition TU then goes to operations file which has definitions.
+
+// pass by value
+// #include <iostream>
+
+// void say_age(int age){ // Parameter
+//     ++age;
+//     std::cout <<  "Hello , you are " << age << " years old! &age : " << &age <<  std::endl;
+// }
+
+// int main(){
+
+//     int age{23}; // Local
+//     std::cout << "age (before call) : " << age << "&age : " << &age << std::endl;
+//     say_age(age); // Argument
+//     std::cout << "age (after call) : " << age << "&age : " << &age <<  std::endl;
+
+//     return 0;
+// }
+
+// pass by pointer
+
+// void say_age(int* age); // Declaration
+
+// int main(){
+
+//     int age{23}; // Local
+//     std::cout << "age (before call) : " << age << "&age : " << &age << std::endl; //23
+//     say_age(&age); // Argument
+//     std::cout << "age (after call) : " << age << "&age : " << &age <<  std::endl; //24
+
+//     return 0;
+// }
+
+
+// void say_age(int* age){ // Parameter
+//     ++(*age); 
+//     std::cout <<  "Hello , you are " << *age << " years old! &age : " << &age <<  std::endl;//24
+// }
+
+// pass by reference
+
+// void say_age(int& age); // Declaration
+
+// int main(){
+
+//     int age{23}; // Local
+//     std::cout << "age (before call) : " << age << "&age : " << &age << std::endl; //23
+//     say_age(age); // Argument
+//     std::cout << "age (after call) : " << age << "&age : " << &age <<  std::endl; //24
+
+//     return 0;
+// }
+
+
+// void say_age(int& age){ // Parameter
+//     ++age; 
+//     std::cout <<  "Hello , you are " << age << " years old! &age : " << &age <<  std::endl;//24
+
+// }
+
+
+// input and output parameters getting things out of functions
+
+// void max_str(const std::string input1, const std::string input2,  std::string& result){
+//     if (input1 > input2)
+//     {
+//         result = input1;
+//     }
+//     else
+//     {
+//         result = input2;
+//     }
+    
+// }
+
+// int main(){
+//     std :: string out_put ;
+
+//     std:: string input1("rishikaar");
+//     std:: string input2("rishi");
+//     max_str(input1,input2, out_put); //passed by reference
+
+//     std::cout << out_put;
+// }
+
+// we cant overload the function with the same parameters even the return type is the same 
+// so we have to put the different parameters to not overload the function
+
+
+// int max(int a, double b ){
+//     if( a >b){
+//         return a;
+//     }else{
+//         return b;
+//     }
+
+// }
+// int max(double a, int b ){
+//     if( a >b){
+//         return a;
+//     }else{
+//         return b;
+//     }
+
+// }
+// double max(double a, double b ){
+//     if( a >b){
+//         return a;
+//     }else{
+//         return b;
+//     }
+
+// }
+
+// int main(){
+
+//     std::cout << max(1.2347575, 2.3455958);
+
+
+// }
+
+// lambda functions
+// int main(){
+// // [](){
+// //     std::cout <<"hi" ;
+// // }();
+
+// auto func = [](int a, int b){
+//     return (a+b);
+// }(12,120);
+
+// std:: cout <<func ;
+
+// }
+
+
+// #include <iostream>
+
+
+
+// int main(){
+    /*
+    Lambda function signature : 
+                                [capture list] (parameters) ->return type{
+                                        // Function body
+                                }
+    */
+
+   //Declaring a lambda function and calling it through a name
+   /*
+   auto func = [](){
+       std::cout << "Hello World!" << std::endl;
+   };
+   func();
+   func();
+   */
+
+
+    //Declare a lambda function and call it directly
+    /*
+    [](){
+       std::cout << "Hello World!" << std::endl;
+    }();
+    */
+
+
+    //Lambda function that takes parameters
+
+    /*
+    [](double a, double b){
+       std::cout << "a + b : " << (a + b)  << std::endl;
+    }(10.0,50.0);
+    */
+
+   /*
+    auto func1 = [](double a, double b){
+       std::cout << "a + b : " << (a + b)  << std::endl;
+    };
+
+    func1(10,20);
+    func1(5,7);
+    */
+
+
+   //Lambda function that returns something
+    /*
+    auto result = [](double a, double b){
+        return a + b;
+    }(10,60);
+
+    //std::cout << "result : " << result << std::endl;
+    std::cout << "result : " << [](double a, double b){
+        return a + b;
+    }(10,60) << std::endl;
+    */
+
+
+   /*
+    auto func1 = [](double a, double b){
+        return a + b;
+    };
+
+    auto result1 = func1(23,7);
+    auto result2 = func1(9,45);
+
+    std::cout << "result1 : " << result1 << std::endl;
+    std::cout << "result2 : " << result2 << std::endl;
+    std::cout  <<"direct call : " << func1(5,2) << std::endl;
+    */
+
+    //Explicitly specify the return type
+//     auto func3 = [](double a, double b)-> int{
+//         return a + b;
+//     };
+
+//     auto func4 = [](double a, double b){
+//         return a + b;
+//     };
+
+//     double a{6.9};
+//     double b{3.5};
+
+//     auto result3 = func3(a,b);
+//     auto result4 = func4(a,b);
+
+//     std::cout << "result3 : " << result3 << std::endl;
+//     std::cout << "result4 : " << result4 << std::endl;
+//     std::cout << "sizeof(result3) : " << sizeof(result3) << std::endl; // 4
+//     std::cout << "sizeof(result4) : " << sizeof(result4) << std::endl; // 8
+
+
+//    std::cout << "Done!" << std::endl;
+   
+//     return 0;
+
+// auto func = [](double a , double b)-> int{
+//     return a + b;
+// }(12.2131,12.43431);
+
+// std:: cout<< func;
+
+// #include <iostream>
+
+// int main(){
+
+    //Capture lists
+    /*
+     double a{10};
+     double b{20};
+     
+     auto func = [a,b](){
+         std::cout  << "a + b : " << a + b << std::endl;
+     };
+     func();
+     */
+
+    //Capturing by value
+    /*
+     int c{42};
+     
+     auto func = [c](){
+         std::cout << "Inner value : " << c << " &inner : " <<&c <<  std::endl;
+     };
+     
+     for(size_t i{} ; i < 5 ;++i){
+         std::cout << "Outer value : " << c << " &outer : " << &c << std::endl;
+         func();
+         ++c;
+     }
+
+     */
+
+    //Capture by reference
+    //  int c{42};
+     
+    //  auto func = [&c](){
+    //      std::cout << "Inner value : " << c << " &inner : " <<&c <<  std::endl;
+    //  };
+     
+    //  for(size_t i{} ; i < 5 ;++i){
+    //      std::cout << "Outer value : " << c << " &outer : " << &c << std::endl;
+    //      func();
+    //      ++c;
+    //  }
+    
+    // return 0;
+
+
+
+
+    // int c{21};
+
+    // auto rishi = [&c](){
+    //     std::cout<<( c +5);
+    // };
+    // rishi();
+
+
+
+
+    
+// }
+
+// }
+
+
+
+// int main(){
+
+//     //Capture everything by value
+//     /*
+//      int c{42};
+     
+//      auto func = [=](){
+//          std::cout << "Inner value : " << c << std::endl;
+//      };
+     
+//      for(size_t i{} ; i < 5 ;++i){
+//          std::cout << "Outer value : " << c << std::endl;
+//          func();
+//          ++c;
+//      }
+//      */
+
+
+//     //Capturing all reference
+//      int c{42};
+//      int d{5};
+     
+//      auto func = [&](){
+//          std::cout << "Inner value : " << c << std::endl;
+//          std::cout << "Inner value(d) : " << d << std::endl;
+//      };
+     
+//      for(size_t i{} ; i < 5 ;++i){
+//          std::cout << "Outer value : " << c << std::endl;
+//          func();
+//          ++c;
+//      }
+  
+//     return 0;
+// }
+
+// function blueprints not real c ++ code
+
+// template <typename R> R max(R a, R b);
+
+// int main(){
+// // use same type
+//     int a {21};
+//     int b {222};
+
+//     std::string x {"rishikar"};
+//     std::string y {"rishi"};
+//     auto result = max(x,y); 
+//     // auto result = max(a,b); 
+
+//     std:: cout << "max: " << result;
+// }
+
+// template <typename R > R max(R a, R b){   // template instancce gets created as a function.
+//     return ( a > b )? a:b; 
+//     // this will get converted into an function
+// }
+
+// explicit conversions of templates
+
+// template <typename T> T maximum( T a, T b){
+//     return (a > b) ? a : b;
+// }
+
+// int main(){
+
+// 	int a{10};
+// 	int b{23};
+// 	double c{34.7};
+// 	double d{23.4};
+// 	std::string e{"hello"};
+// 	std::string f{"world"};
+
+//     //Explicit template arguments
+
+//     auto max = maximum<double>(a,f);  // explicit  int and double works but double and string doesnt work
+//     std::cout << "max : " << max << std::endl;
+   
+//     return 0;
+// }
+
+// by reference
+
+// template <typename T> const T& maximum(const T& a, const T& b); // Declaration
+// //template <typename T> T maximum(T a, T b); // Declaration
+
+// int main(){
+
+//     double a {23.5};
+//     double b {51.2};
+
+//     std::cout << "Out - &a: " << &a << std::endl; // 0x111abc
+//     auto result = maximum(a,b);
+//     std::cout << "Out - &a: " << &a << std::endl; // 0x111abc
+  
+//     return 0;
+// }
+
+
+// //Definition
+// template <typename T> const T& maximum(const T& a, const T& b){
+//     std::cout << "In - &a: " << &a << std::endl; // // 0x111abc
+//     return (a > b ) ? a : b ;  // same address
+// }
+
+/*
+template <typename T> T maximum(T a, T b){
+    std::cout << "In - &a: " << &a << std::endl; // // 0x111abc
+    return (a > b ) ? a : b ;   // different address
 
 
 }
+*/
+
+// template specialization
+
+// const pointer comparison in the function is not possible(coz it gives out address) so we are explicitly declaring the template
+
+// template <typename T> T maximum(T a,T b){
+//     return (a > b) ? a : b ; 
+// }
+
+
+// template <>
+// const char * maximum<const char*> (const char* a, const char* b){
+//     return ( std::strcmp(a,b) > 0) ? a : b;   // turnary operator
+// }
+
+
+// int main(){
+
+//     /*
+// 	int a{10};
+// 	int b{23};
+// 	double c{34.7};
+// 	double d{23.4};
+// 	std::string e{"hello"};
+// 	std::string f{"world"};
+	
+// 	auto max_int = maximum(a,b); // int type deduced
+// 	auto max_double = maximum(c,d);// double type deduced
+// 	auto max_str = maximum(e,f) ;// string type deduced
+	
+// 	std::cout << "max_int : " << max_int << std::endl;
+// 	std::cout << "max_double : " << max_double << std::endl;
+// 	std::cout << "max_str : " << max_str << std::endl;
+//     */
+
+//     //
+// 	const char* g{"wild"};
+// 	const char* h{"animal"};
+	
+// 	//This won't do what you would expect : BEWARE!
+
+//     const char* result = maximum(g,h);
+// 	std::cout << "max(const char*) : " << result << std::endl;
+   
+//     return 0;
+// }
+
+// concepts (constraints in the template)
+
+//Syntax1
+/*
+template <typename T>
+requires std::integral<T>
+T add( T a, T b){
+    return a + b;
+}
+*/
+
+//Syntax2
+
+// template <std::integral T>
+// T add( T a, T b){
+//     return a + b;
+// }
+
+
+//Syntax3
+
+// auto add(std::integral auto a , std::integral auto b){
+//     return a + b;
+// }
+
+
+//Syntax4
+
+// template <typename T>
+// T add( T a, T b) requires std:: integral<T>{
+//     return a + b;
+// }
+
+// int main(){
+
+   
+// 	char a_0{10};
+// 	char a_1{20};
+	
+// 	auto result_a = add(a_0,a_1);
+// 	std::cout << "result_a : " << static_cast<int>(result_a) << std::endl;
+	
+// 	// int b_0{11};
+// 	// int b_1{5};
+// 	// auto result_b = add(b_0,b_1);
+// 	// std::cout << "result_b : " << result_b << std::endl;
+
+
+// 	// double c_0 {11.1};
+// 	// double c_1 {1.9};
+// 	// auto result_c = add(c_0,c_1);
+//     // std::cout << "result_c : " << result_c << std::endl;
+ 
+  
+//     return 0;
+// }
+
+
+// own concepts
+
+
+// #include <iostream>
+// #include <type_traits>
+// #include <concepts>
+
+//Syntax1
+
+
+
+
+
+// template <typename T>
+// concept Multipliable =  requires(T a, T b) {
+// 	a * b; // Just makes sure the syntax is valid
+// };
+
+
+// template <typename T>
+// concept Incrementable = requires (T a) {
+// 	a+=1;
+// 	++a;
+// 	a++;
+// };
+
+// template <typename T>
+// concept MyIntegral = std::is_integral_v<T>;
+
+
+// template <typename T>
+// requires MyIntegral<T>
+// T add (T a, T b){
+//     return a + b;
+// }
+
+
+// int main(){
+
+    // int  x{6};
+    // int y{7};
+
+    //std::string x{"Hello"};
+    //std::string y{"World"};
+
+    // int result = add(x,y);
+
+    // std::cout << result << std::endl;
+    
+    // return 0;
+
+// }
+
+// # include <concepts>
+// template <typename T>
+// concept TinyType = requires (T t){
+//     sizeof(T) < 4;
+
+// };
+// TinyType auto add(TinyType auto a, TinyType auto b){
+//     return a +b;
+// };
+
+// int main(){
+//     char x{24};
+//     char y{21};
+
+//     add(x,y);
+//     return 0 ;
+// }
+
+
+
+

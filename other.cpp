@@ -1,9 +1,9 @@
-#include <iostream>
-#include <iomanip>
-#include <ios>
-#include <cmath>
+// #include <iostream>
+// #include <iomanip>
+// #include <ios>
+// #include <cmath>
 
-int main(){
+// int main(){
 
 // std::cout << std::left;
 // std::cout << std::setw(10) << "Name" << std::setw(5)<< "Age" << std::endl; 
@@ -57,7 +57,7 @@ int main(){
     // std:: cout << "ceil is :" << std:: ceil(25.9)<<std::endl;
     // std:: cout << "floor is :" << std:: floor(25.4)<<std::endl;
 
-    // int value { -5000};\
+    // int value { -5000};
     // std:: cout << "weight is :" << std:: abs(value)<<std::endl;
 
     // std:: cout << "exp is " << std::pow(2,2)<<std::endl;
@@ -79,4 +79,4 @@ int main(){
 
 
 
-}
+// }
