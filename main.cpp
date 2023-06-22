@@ -2382,31 +2382,418 @@ T add( T a, T b){
 // classes
 
 
-const double PI {3.1415926589123433797412};
+// const double PI {3.1415926589123433797412};
 
-// by default classes are private 
-class cylinder
-{
-public:
-    double base_radius {1.22};
-    double height {2.32};
-public:
-    double volume (){
-        return PI * base_radius *base_radius *height;
-    }
-};
+// // by default classes are private 
+// class cylinder
+// {
+// public:
+//     double base_radius {1.22};  // members cant be references
+//     double height {2.32};
+// public:
+//     double volume (){
+//         return PI * base_radius *base_radius *height;
+//     }
+// };
 
-int main(){
+// int main(){
 
-    cylinder cylinder1;  // objects
-    std::cout << "volume is" << cylinder1.volume() <<std::endl;
+//     cylinder cylinder1;  // objects
+//     std::cout << "volume is" << cylinder1.volume() <<std::endl;
     
-    cylinder cylinder2 ;
-    cylinder1.base_radius = 3.0;
-    cylinder1.height = 31.0;
-    std::cout << "volume is" << cylinder2.volume() <<std::endl;
+//     cylinder cylinder2 ;
+//     cylinder1.base_radius = 3.0;
+//     cylinder1.height = 31.0;
+//     std::cout << "volume is" << cylinder2.volume() <<std::endl;
 
-    return 0;
-}
+//     return 0;
+// }
+
+// constructors
 
 
+// const double PI {3.1415926589123433797412};
+
+// // by default classes are private 
+// class cylinder
+// {
+// private:
+//     double base_radius {1.22};  // members cant be references
+//     double height {2.32};
+
+//     public:
+//     cylinder(){
+//         double base_radius {1.22}; 
+//         double height {2.32};
+
+//     }
+
+//     double volume (){
+//         return PI * base_radius *base_radius *height;
+//     }
+// };
+
+// int main(){
+//     cylinder cylinder1;
+//     std:: cout << cylinder1.volume();
+
+// }
+
+// const double PI {3.1415926589123433797412};
+
+// // by default classes are private 
+// class cylinder
+// {
+// private:
+//     double base_radius {1.22};  // members cant be references
+//     double height {2.32};
+
+//     public:
+//     cylinder(){
+//         double base_radius {1.22}; 
+//         double height {2.32};
+
+//     }
+//     cylinder(double rad_param,double height_param){
+//         base_radius = rad_param;
+//         height = height_param;
+
+//     }
+
+//     double volume (){
+//         return PI * base_radius *base_radius *height;
+//     }
+// };
+
+// int main(){
+//     cylinder cylinder1(12,22);
+//     std:: cout << cylinder1.volume();
+
+// }
+
+// default constructor
+
+
+// const double PI {3.1415926535897932384626433832795};
+
+// class Cylinder {
+//     public : 
+//         //Constctors
+//         Cylinder() = default;
+//         Cylinder(double rad_param,double height_param){
+//             base_radius = rad_param;
+//             height = height_param;
+//         }
+   
+//         //Functions (methods)
+//         double volume(){
+//             return PI * base_radius * base_radius * height;
+//         }
+
+//     private : 
+//         //Member variables
+//         double base_radius{1};
+//         double height{1};
+// };
+
+
+// int main(){
+//     Cylinder cylinder1(12,32);
+//     std::cout << "volume : " << cylinder1.volume() << std::endl;
+   
+//     return 0;
+// }
+
+
+// setters and getters
+// #include "constants.h"    
+    // class cylinder{
+
+    //     public : 
+    //     //Constctors
+    //         // cylinder() = default;
+    //         // cylinder(double rad_param,double height_param){
+    //         //     base_radius = rad_param;
+    //         //     height = height_param;
+    //         // }
+    
+    //         //Functions (methods)
+    //         double volume(){
+    //             return PI * base_radius * base_radius * height;
+    //         }
+
+
+    // //getters
+    //     public:
+    //     double get_base_radius(){
+    //         return base_radius;
+    //     }
+    //     double get_height(){
+    //         return height;
+    //     }
+    // // setters
+    //     void set_base_radius(double radius_param){
+    //         base_radius = radius_param;
+    //     }
+    //     void set_height(double height_param){
+    //         height = height_param;
+    //     }
+    //     private :
+    //         double base_radius{1.212};
+    //         double height{1.212};
+    // };
+
+
+    // int main(){
+
+    //     cylinder cylinder1;
+    //     std::cout << cylinder1.volume();
+
+    // }
+
+    // we can get private stuff by setters and getters
+
+
+    // access through pointers
+    
+// #include <iostream>
+// #include "cylinder.h"
+
+// int main(){
+
+//     Cylinder cylinder1(10,10);
+
+//     cylinder1.volume();
+
+//     //Managing a stack object through pointers
+//     Cylinder* p_cylinder1 = &cylinder1;
+
+//     //std::cout << "volume : " << (*p_cylinder1).volume() << std::endl;
+//     std::cout << "volume : " << p_cylinder1->volume() << std::endl;
+
+//     //Create a cylinder heap object through the new operator
+//     Cylinder* p_cylinder2 = new Cylinder(100,2); // Heap
+
+//     std::cout << "volume(clylinder2) : " << p_cylinder2->volume() << std::endl;
+//     std::cout << "base_rad(cylinder2) : " << p_cylinder2->get_base_radius() << std::endl;
+
+
+
+
+//     delete p_cylinder2;
+   
+    
+//     return 0;
+// }
+
+
+// destructor
+
+// #include <string_view>
+
+// class Dog{
+//     public : 
+//         Dog() = default;
+//         Dog(std::string_view name_param, std::string_view breed_param, int  age_param);
+//         ~Dog(); // destructor ~dog(); 
+
+//     private : 
+//         std::string name;
+//         std::string breed;
+//         int * p_age{nullptr};
+// };
+// Dog::Dog(std::string_view name_param, std::string_view breed_param, int  age_param){
+//     name = name_param;
+//     breed = breed_param;
+//     p_age = new int;
+//     *p_age = age_param;
+//     std::cout << "Dog constructor called for " << name << std::endl;
+// }
+
+// Dog::~Dog(){     // called Dog :: ~Dog(){}
+//     delete p_age;
+//     std::cout << "Dog destructor called for : " << name << std::endl;
+// }
+
+// void some_func(){
+//     Dog* p_dog = new Dog("Fluffy","Shepherd",2);
+
+//     delete p_dog;// Causes for the destructor of Dog to be called
+// }
+
+
+
+// int main(){ 
+
+//     some_func();
+    
+
+//     std::cout << "Done!" << std::endl;
+//     return 0;
+// }
+
+// stack order for destructor 
+
+// this pointer
+
+
+
+// class Dog{
+//     public : 
+//         Dog() = default;
+//         Dog(std::string_view name_param, std::string_view breed_param, int  age_param);
+//         ~Dog();
+
+//         void print_info(){
+//             std::cout << "Dog (" << this << ") : [ name : " << name 
+//                 << " breed : " << breed << " age : " << *p_age << "]" << std::endl;
+//         }
+
+//         //Setters
+//         //Chained calls using pointers
+//         /*
+//         Dog* set_dog_name(std::string_view name){
+//             //name = name; // This does nothing
+//             this->name = name;
+//             return this;
+//         }
+//         Dog* set_dog_breed(std::string_view breed){
+//             this->breed = breed;
+//             return this;
+//         }
+
+//         Dog* set_dog_age(int age){
+//             *(this->p_age) = age;
+//             return this;
+//         }
+//         */
+
+//        //Chained calls using references
+//         Dog& set_dog_name(std::string_view name){
+//             //name = name; // This does nothing
+//             this->name = name;
+//             return *this;
+//         }
+//         Dog& set_dog_breed(std::string_view breed){
+//             this->breed = breed;
+//             return *this;
+//         }
+
+//         Dog& set_dog_age(int age){
+//             *(this->p_age) = age;
+//             return *this;
+//         }
+
+//     private : 
+//         std::string name;
+//         std::string breed;
+//         int * p_age{nullptr};
+// };
+// Dog::Dog(std::string_view name_param, std::string_view breed_param, int  age_param){
+//     name = name_param;
+//     breed = breed_param;
+//     p_age = new int;
+//     *p_age = age_param;
+//     std::cout << "Dog constructor called for " << name << " at " << this << std::endl;
+// }
+
+// Dog::~Dog(){
+//     delete p_age;
+//     std::cout << "Dog destructor called for " << name << " at " << this <<  std::endl;
+// }
+
+// int main(){
+
+//     Dog dog1("Fluffy","Shepherd",2); //Constructor
+//     dog1.print_info();
+
+//     /*
+//     dog1.set_dog_name("Pumba");
+//     dog1.set_dog_breed("Wire Fox Terrier");
+//     dog1.set_dog_age(4);
+//     */
+
+//     //Chained calls using pointers
+//     //dog1.set_dog_name("Pumba")->set_dog_breed("Wire Fox Terrier")->set_dog_age(4);
+
+//     //Chained calls using references
+//     dog1.set_dog_name("Pumba").set_dog_breed("Wire Fox Terrier").set_dog_age(4);
+
+
+//     dog1.print_info();
+   
+
+//     std::cout << "Done!" << std::endl;
+//    //Destructor
+//     return 0;
+// }
+
+// struct
+/*
+members are private by default in class 
+members are public by default in struct 
+remaining all is same */ 
+
+// struct rishi
+// {
+//     std:: string name;
+// };
+// class bhavan
+// {
+//     std:: string name;
+// };
+
+// int main(){
+//     rishi rishikar1{"rishikar"};
+//     std:: cout << rishikar1.name;
+//     // bhavan bhavan1{"bhavan"};
+//     // std:: cout << bhavan1.name;  we cant do this coz class is private
+// }
+
+// size of the class is the size of members added if we have two ints we gonna have 8 bytes as the size of the class.
+// for string it is constant
+
+// inheritance
+// #include <iostream>
+// #include "player.h"
+
+
+// int main(){
+
+//     Player p1("Basketball");
+//     p1.set_first_name("John");
+//     p1.set_last_name("Snow");
+//     std::cout << "player : " << p1 << std::endl;
+   
+//     return 0;
+// }
+
+
+// protected ( to access the private stuff in the derived class ,only in derived class, not in like main function or sny other functions only in derived class)
+
+/*
+base derived class public, protected, private
+public:
+
+if we derive by public anything which is public from base class stays public in derived class 
+if we derive by public anything which is protected from base class stays protected in derived class 
+if we derive by public anything which is private from base class stays private in derived class 
+
+protected :
+
+if we derive by protected anything which is public from base class becomes protected in derived class 
+if we derive by protected anything which is protected from base class stays protected in derived class 
+if we derive by protected anything which is private from base class stays private in derived class 
+
+private :
+
+if we derive by private anything which is public from base class becomes private in derived class 
+if we derive by private anything which is protected from base class becomes private in derived class 
+if we derive by private anything which is private from base class stays private in derived class
+
+so we can access public in main file
+so we can't access protected in main file
+so we can't access private in main file
+
+
+*/
