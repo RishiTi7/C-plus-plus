@@ -2349,5 +2349,64 @@ T add( T a, T b){
 // }
 
 
+//using logical and concepts together
+
+// template <typename T>
+// concept TinyType = requires (T t){
+//     sizeof(T) <= 4 ;
+//     requires sizeof (T) <=4;
+
+// };
+
+// template <typename T >
+
+// // requires std:: integral <T> || std:: floating_point<T>
+// requires std:: integral <T>&& TinyType <T>
+// T add (T a , T b){
+//     return a + b;
+// }
+
+// int main(){
+
+//     int c {2};
+//     int d {2};
+
+//     auto result = add(c,d);
+
+//     std:: cout << result;
+//     return 0 ;    
+
+// }
+
+// oops
+// classes
+
+
+const double PI {3.1415926589123433797412};
+
+// by default classes are private 
+class cylinder
+{
+public:
+    double base_radius {1.22};
+    double height {2.32};
+public:
+    double volume (){
+        return PI * base_radius *base_radius *height;
+    }
+};
+
+int main(){
+
+    cylinder cylinder1;  // objects
+    std::cout << "volume is" << cylinder1.volume() <<std::endl;
+    
+    cylinder cylinder2 ;
+    cylinder1.base_radius = 3.0;
+    cylinder1.height = 31.0;
+    std::cout << "volume is" << cylinder2.volume() <<std::endl;
+
+    return 0;
+}
 
 
