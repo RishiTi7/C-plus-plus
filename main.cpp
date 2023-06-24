@@ -2797,3 +2797,169 @@ so we can't access private in main file
 
 
 */
+// we can resurrect the public and protected stuff by the (**using**) keyword any member which is private we cant resurrect it
+
+/*
+if we have a function which is public in base class
+and we inherit that privately in derived class by we wanted to resurrect the function by using keyword so we use that
+ now in second derived class we can use that function xoz we resurrected it
+*/
+
+
+/* constructors are called in an heirarchy 
+first base class default constructor is called
+then derived class default constructor is called
+then second derived class default constructor is called */
+
+// ss of initializer ( we can only initialize the members which belong to the same class other wise it wont work)
+
+// Engineer:: Engineer(std::cout string_view fullname, int age, std::string_view address , int contract_count_param):person(fullname, age, address),contract_count(contract_count_param)
+                                                                                                                     //base constructor called        initializing our own members
+// by this we are inheriting a class initializing its memebers and forwaring members with this own members
+// so enginner class is forwarding the derived class members to it
+
+// civilenginner:: civilenginner(std::string_view fullname,int age, std::string_view address, int contract_count, std::string_view speciality ) : enginner(fullname, age, address, contract_count, ), m_speciality(speciality){}
+// dont initialize in body 
+
+
+//copy constructor
+//   base class  
+/*person::person( const person& source)   here source is object created for the class person passed by reference
+: m_full_name{source.m_full_name},   // initializing
+ m_last_name{source.m_last_name},
+ m_age{source.m_age} */
+
+ // but whatif we have the to pass the constructor to the base class
+
+// derived class
+//  enginner::enginner(const enginner& source)
+//  : person(source),
+//  contract_n(source.contract_n){}
+
+// second derived class
+
+
+// civilenginner:: civilengineer( const civilenginner& source)
+// : engineer(source), m_speciality(source.m_speciality){
+
+// };
+
+// have to follow the heirarchy
+
+// inheriting base constructor in the derived class constructor.
+
+// using person :: person ; // will have all the parameters as the base class , will have all the constructors
+ 
+// destructors are called in the reverse order.
+
+// protected -> child class.
+
+// if we have the same name for the members in the parent and child class
+// if we call the main function with a name child class will gets displayed
+// but if we want the parent memebers to be displayed we have to use the following syntax
+// child.parent:: print_var();
+
+
+// polymorphism using a base class pointer/ reference to manage the derived class objects.
+
+// shape * ptr         >> circle 
+//                        rectangle
+//                        triangle
+//                        etc
+#include "shape.h"
+#include "oval.h"
+#include "circle.h"
+
+
+void draw_shape(Shape* s){
+    s->draw();
+}
+
+void draw_shape_r(Shape& s_r){
+    s_r.draw();
+}
+
+int main(){
+    Shape shape1 ("shape1");
+    // shape1.draw();
+    Oval oval1 ( 2.0,3.5,"oval1");
+    // oval1.draw();
+    Circle circle1 (3.3,"circle1");
+    // circle1.draw();
+
+
+// static binding not dynamic binding
+
+    // Shape * shape_ptr = &shape1;
+
+    // // shape_ptr -> draw();
+
+    // shape_ptr = &oval1;
+    // shape_ptr ->draw();
+
+
+    // shape_ptr = &circle1;
+    // shape_ptr ->draw();
+
+
+    // // this is still static binding for references 
+
+
+    // Shape& shape_ptr = shape1;
+
+    // // shape_ptr -> draw();
+
+    // shape_ptr = oval1;
+    // shape_ptr ->draw();
+
+
+    // shape_ptr = circle1;
+    // shape_ptr ->draw();
+
+
+
+
+// dynamic binding pointer (polymorphism) ( virtual keyword)
+     Shape * shape_ptr = &shape1;
+    // shape_ptr -> draw();
+
+     shape_ptr = &oval1;
+     //shape_ptr ->draw();
+
+
+     shape_ptr = &circle1;
+     //shape_ptr ->draw();
+
+
+    // draw_shape(&circle1);
+
+    // draw_shape_r(oval1);
+
+
+    // shapes stored in collections
+
+    Shape * shape_collections []{ &shape1,&oval1,& circle1};
+
+    for (Shape* shape_ptr : shape_collections)
+    {
+        shape_ptr->draw();
+    }
+    
+
+
+
+
+    return 0;
+
+}
+
+// dynamic binding or poly is only going to be called if the method or function is virtual
+
+// if we dont use base pointer or references the compiler gonna slice the classes and return the base class 
+
+// circle circle1(0.3, "circle1");
+// shape shape = Circle1;  // no pointers or references to the base class 
+// shape.draw();
+
+// it slices the remaining classes only returns the shape class 
+
